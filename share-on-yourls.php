@@ -70,7 +70,7 @@ function render_page() {
                                 class="regular-text"
                                 placeholder="https://example.com"
                             >
-                            <p class="description">YOURLSのAPIエンドポイントURL（例: `https://your-domain.com`）を入力してください。</p>
+                            <p class="description">YOURLSのAPIエンドポイントURLと/yourls-api.php（例: `https://your-domain.com/yourls-api.php`）を入力してください。</p>
                         </td>
                     </tr>
                 </tbody>
