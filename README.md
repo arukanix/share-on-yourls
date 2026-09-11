@@ -5,7 +5,7 @@ WordPressの投稿ページから、自作の短縮URLサーバー「YOURLS」�
 ## 📥 ダウンロード
 手軽にインストールしたい場合は、以下のリンクから最新のZIPファイルをダウンロードしてください。
 
-👉 **[Share on YOURLS をZIPでダウンロードする (mainブランチ版)](./share-on-yourls.zip)**
+👉 **[Share on YOURLS をZIPでダウンロードする (mainブランチ版)](https://github.com/arukanix/share-on-yourls/releases/latest/download/share-on-yourls.zip)**
 
 ---
 
