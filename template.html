@@ -1,0 +1,61 @@
+<style>
+.popup-btn-container{
+    text-align: center;
+    margin: 30px 0;
+}
+
+#urlCopyBtn{
+    background-color: #ff6600;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+#urlCopyBtn:disabled {
+    background-color: #a0a0a0; /* コピーした後にボタン色をグレーにして分かりやすく */
+    cursor: not-allowed;
+}
+</style>
+
+<div class="shortify-content" id="shortifyContent">
+    <div class="popup-btn-container">
+        <button id="urlCopyBtn">短縮したURLをコピー</button>
+    </div>
+</div>
+
+<script>
+// ページ読み込み完了時、またはすでに読み込み済みの両方に対応（WordPressのテーマ対策）
+function initShortifyCopy() {
+    const urlCopyBtn = document.getElementById("urlCopyBtn");
+
+    if (urlCopyBtn) {
+        urlCopyBtn.addEventListener("click", function() {
+            // クォーテーションで囲むことで、置換後に正しい文字列として認識させます
+            const shortUrl = '{{SHORT_URL}}';
+            
+            navigator.clipboard.writeText(shortUrl).then(() => {
+                urlCopyBtn.innerHTML = "コピーしました！";
+                urlCopyBtn.disabled = true;
+                
+                setTimeout(() => {
+                    urlCopyBtn.innerHTML = "短縮したURLをコピー";
+                    urlCopyBtn.disabled = false;
+                }, 1000);
+            }).catch(err => {
+                console.error("コピーに失敗しました: ", err);
+            });
+        });
+    }
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initShortifyCopy);
+} else {
+    initShortifyCopy();
+}
+</script>
